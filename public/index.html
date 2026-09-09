@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remindr — Never miss an appointment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div class="brand">
+        <span class="brand-mark">&#9679;</span>
+        <span class="brand-name">Remindr</span>
+      </div>
+      <p class="tagline">Add it once. We'll text you before it's time.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel">
+        <h2>New appointment</h2>
+        <form id="appointment-form">
+          <label for="title">What is it?</label>
+          <input type="text" id="title" name="title" placeholder="Doctor's appointment" required />
+
+          <label for="appointment_time">When?</label>
+          <input type="datetime-local" id="appointment_time" name="appointment_time" required />
+
+          <label for="phone_number">Phone number</label>
+          <input type="tel" id="phone_number" name="phone_number" placeholder="+2348012345678" required />
+
+          <label for="reminder_offset_minutes">Remind me</label>
+          <select id="reminder_offset_minutes" name="reminder_offset_minutes">
+            <option value="10">10 minutes before</option>
+            <option value="60">1 hour before</option>
+            <option value="1440" selected>1 day before</option>
+            <option value="2880">2 days before</option>
+          </select>
+
+          <button type="submit">Save appointment</button>
+          <p id="form-message" class="form-message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel list-panel">
+        <h2>Upcoming</h2>
+        <div id="appointments-list" class="appointments-list">
+          <p class="empty-state">No appointments yet. Add your first one.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
