@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #F5F6F3;
+  --panel: #FFFFFF;
+  --ink: #1F2A24;
+  --ink-soft: #5B695F;
+  --accent: #2F6F4E;
+  --accent-soft: #E6EFE9;
+  --border: #DDE3DE;
+  --danger: #B4472B;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.brand-name {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 6px 0 0 24px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  max-width: 40ch;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 760px) {
+  .layout {
+    grid-template-columns: 380px 1fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.panel h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 19px;
+  margin: 0 0 20px;
+}
+
+form label {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 16px 0 6px;
+}
+
+form label:first-of-type {
+  margin-top: 0;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+form input:focus,
+form select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  background: var(--panel);
+}
+
+button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover { background: #275c40; }
+button:disabled { background: #9CB3A6; cursor: not-allowed; }
+
+.form-message {
+  min-height: 18px;
+  font-size: 13px;
+  margin: 10px 0 0;
+}
+
+.form-message.success { color: var(--accent); }
+.form-message.error { color: var(--danger); }
+
+.empty-state {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.appointment-info h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.appointment-info .when {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.status-pending { background: var(--accent-soft); color: var(--accent); }
+.status-reminded { background: #FCEFE4; color: #A05A1F; }
+.status-completed { background: #E9E9E9; color: var(--ink-soft); }
+
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.appointment-actions button {
+  margin-top: 0;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+}
+
+.appointment-actions button:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
