@@ -61,10 +61,3 @@ SMS via Twilio and its status flips from `pending` to `reminded`.
 | PATCH  | `/appointments/:id` | Update status (completed/cancelled) |
 | DELETE | `/appointments/:id` | Delete an appointment            |
 
-## Next steps (not in this MVP)
-
-- User accounts / auth (right now all appointments are global)
-- Editing an appointment after creation
-- Medication-style recurring reminders + "Taken/Missed" history
-- Timezone handling beyond server-local time
-- Retry logic for failed SMS sends
